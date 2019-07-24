@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import jobs.views
+##  importing settings
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,5 +26,12 @@ urlpatterns = [
     path('', jobs.views.home, name='home'),
     path('jobs/<int:job_id>', jobs.views.detail, name='detail')
 ] 
+##  providing static url of static root
+##  we are providing url in order for django to know where to find static files
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+#   the below code searches django project if there is any folder
+#   named 'static' where it need to add in static folder
+
+#####  python manage.py collectstatic

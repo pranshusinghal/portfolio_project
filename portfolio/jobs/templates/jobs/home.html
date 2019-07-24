@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
-<!-- load the static -->
+
+<!--  -->
+<!-- load the static files in home.html -->
+<!--  -->
 {% load static %}
   <head>
     <meta charset="utf-8">
@@ -42,6 +45,8 @@
       <p>
         <a href="mailto:singhalpranshu12@gmail.com" class="btn btn-primary my-2">Email Me</a>
       </p>
+      <!--  -->
+      <!-- static file 'added an imagee' -->
       <img src="{% static 'pranshu.jpeg' %}" height="300"></img>
     </div>
   </section>
@@ -50,8 +55,12 @@
     <div class="container">
 
       <div class="row">
+        <!--  -->
+        <!-- looping through all loops -->
         {% for job in jobs.all %}
+        <!--  -->
         <div class="col-md-4">
+          <!-- referencing to a particular job using job_id -->
           <a href="{% url 'detail' job.id %}">
 
           <div class="card mb-4 shadow-sm">
